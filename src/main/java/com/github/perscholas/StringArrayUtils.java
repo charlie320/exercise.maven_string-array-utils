@@ -1,5 +1,7 @@
 package com.github.perscholas;
 
+import java.util.Arrays;
+
 /**
  * Created by leon on 1/29/18.
  */
@@ -9,7 +11,7 @@ public class StringArrayUtils {
      * @return first element of specified array
      */ // TODO
     public static String getFirstElement(String[] array) {
-        return null;
+        return array[0];
     }
 
     /**
@@ -17,7 +19,7 @@ public class StringArrayUtils {
      * @return second element in specified array
      */
     public static String getSecondElement(String[] array) {
-        return null;
+        return array[1];
     }
 
     /**
@@ -25,7 +27,7 @@ public class StringArrayUtils {
      * @return last element in specified array
      */ // TODO
     public static String getLastElement(String[] array) {
-        return null;
+        return array[array.length-1];
     }
 
     /**
@@ -33,7 +35,7 @@ public class StringArrayUtils {
      * @return second to last element in specified array
      */ // TODO
     public static String getSecondToLastElement(String[] array) {
-        return null;
+        return array[array.length-2];
     }
 
     /**
@@ -42,6 +44,11 @@ public class StringArrayUtils {
      * @return true if the array contains the specified `value`
      */ // TODO
     public static boolean contains(String[] array, String value) {
+    	for (String s : array) {
+    		if (s.equals(value)) {
+    			return true;
+    		}
+    	}
         return false;
     }
 
@@ -50,7 +57,21 @@ public class StringArrayUtils {
      * @return an array with identical contents in reverse order
      */ // TODO
     public static String[] reverse(String[] array) {
-        return null;
+    	
+//    	String[] newStrArr = new String[array.length];
+//    	
+//    	for (int i = 0; i < array.length/2; i++) {
+//    		newStrArr[i] = array[(array.length-1)-i];
+//    		newStrArr[(array.length-1)] = array[i];
+//    	}
+//    	System.out.println(Arrays.toString(array));
+    	String temp = "";
+    	for (int i = 0; i < array.length/2; i++) {
+    		temp = array[i];
+    		array[i] = array[(array.length-1)-i];
+    		array[(array.length-1)-i] = temp;
+    	}
+        return array;
     }
 
     /**
@@ -84,7 +105,12 @@ public class StringArrayUtils {
      * @return array with identical contents excluding values of `value`
      */ // TODO
     public static String[] removeValue(String[] array, String valueToRemove) {
-        return null;
+    	for (int i = 0; i < array.length; i++) {
+    		if (array[i].equals(valueToRemove)) {
+    			array[i] = null;
+    		}
+    	}
+        return array;
     }
 
     /**

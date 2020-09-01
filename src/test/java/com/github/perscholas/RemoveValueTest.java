@@ -1,13 +1,15 @@
 package com.github.perscholas;
 
-import org.junit.Assert;
+import static org.junit.Assert.assertTrue;
+
 import org.junit.Test;
 
 public class RemoveValueTest {
 
     private void test(String[] array, String[] expected,String valueToRemove) {
+    	
         String[] actual = StringArrayUtils.removeValue(array, valueToRemove);
-        Assert.assertEquals(expected, actual);
+        assertTrue(expected.equals(actual));
     }
 
     @Test

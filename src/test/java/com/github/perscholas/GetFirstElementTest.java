@@ -27,7 +27,6 @@ public class GetFirstElementTest {
         test(array, expected);
     }
 
-
     @Test
     public void testGetFirstElement3() {
         String[] array = {"brown", "fox", "jumps", "over", "the", "lazy", "dog"};
