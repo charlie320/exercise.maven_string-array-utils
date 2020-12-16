@@ -4,7 +4,8 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class GetConsecutiveDuplicatesTest {
-    private void test(String[] array, String[] expectedArray) {
+    @SuppressWarnings("deprecation")
+	private void test(String[] array, String[] expectedArray) {
         String[] actual = StringArrayUtils.removeConsecutiveDuplicates(array);
         Assert.assertEquals(actual, expectedArray);
     }
