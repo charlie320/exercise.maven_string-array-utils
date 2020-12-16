@@ -5,7 +5,8 @@ import org.junit.Test;
 
 public class ReverseTest {
 
-    private void test(String[] array, String[] expected) {
+    @SuppressWarnings("deprecation")
+	private void test(String[] array, String[] expected) {
         String[] actual = StringArrayUtils.reverse(array);
         Assert.assertEquals(expected, actual);
     }
